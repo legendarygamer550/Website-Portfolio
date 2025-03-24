@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="grade.css">
+    <script src="grade.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Course Grade Calculator</h1>
+
+        <label for="courseSelect">Select Course:</label>
+        <select id="courseSelect" onchange="changeCourse()">
+            <option value="Web Design">Web Design</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Software Developer">Software Developer</option>
+            <option value="Data Analyst">Data Analyst</option>
+        </select>
+
+        <h2 id="courseTitle">Current Course: Web Design</h2>
+
+        <h3>Enter Subject Scores:</h3>
+        <div id="inputArea">
+            <input type="text" id="subjectName" placeholder="Enter Subject Name">
+            <input type="number" id="score" placeholder="Enter Score (0-100)" min="0" max="100">
+            <div></div>
+            <button onclick="addScore()" id="add">Add Score</button>
+        </div>
+
+        <h3>Subject Scores for <span id="currentCourse">Web Design</span>:</h3>
+        <table id="scoreTable">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Score</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+
+        <h3 id="averageScore">Average Score: -</h3>
+        <h3 id="finalGrade">Final Grade: -</h3>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
